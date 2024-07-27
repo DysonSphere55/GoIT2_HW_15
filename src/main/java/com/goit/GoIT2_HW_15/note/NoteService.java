@@ -52,4 +52,16 @@ public class NoteService {
         }
         return noteStorage.get(id);
     }
+
+    public void createRandomNotes() {
+        for (int i = 1; i < 6; i++) {
+            Note note = new Note();
+            note.setId(NoteIdGenerator.generateId());
+            note.setTitle("title_"+i);
+            note.setContent("content_"+i+" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius" +
+                    "egestas lacinia. Maecenas dignissim vel ipsum ut dignissim. Ut condimentum, orci at hendrerit" +
+                    "luctus, orci sem dictum elit, ac sagittis.");
+            add(note);
+        }
+    }
 }
